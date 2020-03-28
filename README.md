@@ -1,4 +1,4 @@
-# Maven Commands
+# Maven  are easy
 
 ## 1. Create maven project
 
