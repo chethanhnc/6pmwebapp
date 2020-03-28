@@ -1,6 +1,5 @@
 pipeline{
     agent any 
-    def mvnhome = tool name: 'maven3', type: 'maven'
     stages{
         stage('SCM checkout'){
             steps{
