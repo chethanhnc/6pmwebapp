@@ -10,7 +10,7 @@ pipeline{
         stage('build package'){
         steps{
         script{
-        sh label: '', script: 'clean package'
+        sh script: 'mvn clean package'
         }
   }
 }
