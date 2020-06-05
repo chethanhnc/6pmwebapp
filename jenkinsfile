@@ -5,6 +5,10 @@ pipeline{
             steps{
         git credentialsId: 'ebf2c8a3-0829-4e46-ac8f-74a116e4587f', 
         url: 'https://github.com/chethanhnc/6pmwebapp.git'
+        stage('build package')
+        steps{
+        sh label: '', script: 'clean package'
+        }
 }
 }
 }
