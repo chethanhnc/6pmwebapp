@@ -3,33 +3,6 @@ pipeline{
     stages{
         stage('SCM checkout'){
             steps{
-                git credentialsId: 'master', url: 'https://github.com/chethanhnc/6pmwebapp'
-
-            }
-        }
-        stage('Build package'){
-            steps{
-                script{
-                    def mvnhome = tool name: 'maven3', type: 'maven'
-                sh  script: "${mvnhome}/bin/mvn clean package"
-                }
-
-            }
-        }
-        stage('deploy- to- tomcat'){
-            steps{
-                    sshagent(['tomcat-deploy']) {
-                   // stop the tomcat
-                   sh "ssh ec2-user@35.171.162.216 opt/Tomcat8/bin shutdown.sh"
-                   //copy the war file from jenkins to tomcat servers
-                   sh "scp target/6pmwebapp.war ec2-user@35.171.162.216 opt/Tomcat8/webapps"
-                   //start the tomcatsh 
-                   sh "ssh ec2-user@35.171.162.216 opt/Tomcat8/bin startup.sh"
-
-}
-
-            }
-        }
- 
-    }
-}
+        git credentialsId: 'ebf2c8a3-0829-4e46-ac8f-74a116e4587f', 
+        url: 'https://github.com/chethanhnc/6pmwebapp.git'
+        branch: 'master'
