@@ -14,13 +14,5 @@ pipeline{
         }
   }
 }
-   stage('deploying to the tomcat'){
-   steps{
-   script{
-   sh script: 'sudo cp /var/lib/jenkins/workspace/Bank_application/target/6pmwebapp.war /opt/tomcat8/webapps'
-   }
-   }
-   }
-
 }
 }
