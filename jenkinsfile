@@ -16,7 +16,7 @@ pipeline{
   }
   stage(build dockerfile'){
   steps{
-  sh 'docker build -t chethankumar/myapp1:1.0.0
+  sh 'docker build -t chethankumar/myapp1:1.0.0 .
 }
 }
 }
